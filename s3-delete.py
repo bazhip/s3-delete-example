@@ -29,7 +29,7 @@ deployments = {}
 for o in result.get('CommonPrefixes'):
    deploy_id = o.get('Prefix')
    print (deploy_id)
-   index = s3.Object(bucket.name, "{}index.yaml".format(deploy_id))
+   index = s3.Object(bucket.name, "{}index.html".format(deploy_id))
    deployments[deploy_id] = (calendar.timegm(index.last_modified.timetuple()))
 
 
